@@ -1,6 +1,6 @@
 
 
-export const memoize = (fn: any) => {
+export const memoize = (fn: Function) => {
     let cache: Map<string, unknown> = new Map()
 
     if(typeof fn !== "function"){
