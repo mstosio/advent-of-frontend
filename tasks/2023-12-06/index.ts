@@ -1,15 +1,15 @@
 
 
 export class OrderController {
-    private machines: Set<Machine>
+    private machines: Machine[]
     constructor() {
-        this.machines = new Set()
+        this.machines = []
     }
     registerMachine(machine: Machine){
-        this.machines.add(machine)
+        this.machines.push(machine)
     }
     unregisterMachine(machineToBeDeleted: Machine){
-        this.machines.delete(machineToBeDeleted)
+        this.machines = this.machines.filter(machine => machine !== machineToBeDeleted)
     }
 
     setState(value: string){
